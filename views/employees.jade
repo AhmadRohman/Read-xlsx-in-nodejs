@@ -13,11 +13,7 @@ block content
       th salary
       -each emp in employ
          tr
-         td: input(type='checkbox')
          td #{emp.nip}
          td #{emp.name}
          td #{emp.gender}
          td #{emp.salary}
-   br
-   button(onclick="location.href='#'; ") Save to MongoDB
-   h4 Coming Soon
