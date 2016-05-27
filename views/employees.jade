@@ -6,7 +6,6 @@ block content
    h1=title
    table
       tr
-      th Select
       th NIP
       th Name
       th gender
@@ -17,3 +16,20 @@ block content
          td #{emp.name}
          td #{emp.gender}
          td #{emp.salary}
+   br
+   button(onclick="location.href='/save';") Save to MongoDB
+
+   h1 This data retrieved from the database MongoDB
+   table
+      tr
+      th NIP
+      th Name
+      th gender
+      th salary
+      -each emplo in employe
+         tr
+         td #{emplo.nip}
+         td #{emplo.name}
+         td #{emplo.gender}
+         td #{emplo.salary}
+         td: button(onclick="location.href='/delete/_id=#{emplo._id}'") Delete

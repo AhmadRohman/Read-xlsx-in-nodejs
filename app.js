@@ -4,9 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://127.0.0.1/EmployDB', function(e){
+  if(e){
+    console.log('Connections error : ' +e)
+  } else{
+    console.log('Connect ... !!')
+  }
+});
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -24,6 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', routes.index);
 app.get('/read-xlsx', routes.readexls);
+app.get('/save', routes.save_employees);
+app.get('/delete/_id=:_id', routes.delete);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
