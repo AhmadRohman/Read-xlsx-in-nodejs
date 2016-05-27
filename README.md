@@ -20,7 +20,3 @@ excel file :
      salary: '3.000.000' 
  } ]
  
- jika sudah dalam bentuk JSON tinggal bagaimana data akan diolah, akan di tampilkan datanya pada halaman web kemudian
- di pilih satu persatu dan disimpan dalam database atau langsung di simpan kedatabase.
- 
- 
